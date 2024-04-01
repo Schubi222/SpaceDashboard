@@ -1,4 +1,4 @@
-export type links = {
+export type Links = {
 	links: {
 		patch: {
 			small: string;
@@ -21,3 +21,28 @@ export type links = {
 		wikipedia: string;
 	};
 };
+export type Fairings = {
+	reused: boolean | null;
+	recovery_attempt: boolean | null;
+	recovered: boolean | null;
+	ships: string[] | null;
+};
+export type Crew = [
+	{
+		crew: string | null;
+		role: string | null;
+	}
+];
+export type Cores = [
+	{
+		core: string | null;
+		flight: number | null;
+		gridfins: boolean | null;
+		legs: boolean | null;
+		reused: boolean | null;
+		landing_attempt: boolean | null;
+		landing_success: boolean | null;
+		landing_type: string | null;
+		landpad: string | null;
+	}
+];
