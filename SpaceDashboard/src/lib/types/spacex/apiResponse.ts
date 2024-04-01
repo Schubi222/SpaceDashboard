@@ -1,6 +1,6 @@
-import type { Cores, Crew, Fairings, Links } from '$lib/types/spacex/apiResponseGeneral';
+import type { Cores, Crew, Fairings, Links } from './apiResponseGeneral';
 
-export type launchResponse = {
+export type LaunchResponse = {
 	fairings: Fairings | null;
 	links: Links;
 	flight_number: number;

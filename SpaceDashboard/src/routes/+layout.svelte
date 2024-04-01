@@ -3,6 +3,7 @@
 	import Error from '$lib/components/Error.svelte';
 	import { outestLoading } from '$lib/stores/LoadingStore';
 	import Loading from '$lib/components/Loading.svelte';
+	import '$lib/styles/index.css'
 </script>
 
 {#if $outestError}<Error />
