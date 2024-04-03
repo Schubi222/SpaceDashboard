@@ -46,3 +46,36 @@ export type Cores = [
 		landpad: string | null;
 	}
 ];
+export type StageBasis = {
+	reusable: boolean;
+	engines: number;
+	fuel_amount_tons: number;
+	burn_time_sec: number;
+};
+export type FirstStage = StageBasis & {
+	thrust_sea_level: Thrust;
+	thrust_vacuum: Thrust;
+};
+export type SecondStage = StageBasis & {
+	thrust: Thrust;
+	payloads: {
+		option_1: string;
+		composite_fairing: {
+			height: Size;
+			diameter: Size;
+		};
+	};
+};
+export type Thrust = {
+	kN: number;
+	lbf: number;
+};
+
+export type Size = {
+	meters: number;
+	feet: number;
+};
+export type Weight = {
+	kg: number;
+	lb: number;
+};

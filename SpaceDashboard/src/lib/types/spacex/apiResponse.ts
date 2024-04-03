@@ -1,4 +1,15 @@
-import type { Cores, Crew, Fairings, Links } from './apiResponseGeneral';
+import type {
+	Cores,
+	Crew,
+	Fairings,
+	FirstStage,
+	Links,
+	SecondStage,
+	Size,
+	StageBasis,
+	Thrust,
+	Weight
+} from './apiResponseGeneral';
 
 export type LaunchResponse = {
 	fairings: Fairings | null;
@@ -32,4 +43,46 @@ export type LaunchResponse = {
 	launchpad: string | null;
 	cores: Cores;
 	auto_update: boolean;
+};
+
+export type RocketsResponse = {
+	name: string;
+	type: string;
+	active: boolean;
+	stages: number;
+	boosters: number;
+	cost_per_launch: number;
+	success_rate_pct: number;
+	first_flight: string;
+	country: string;
+	company: string;
+	height: Size;
+	diameter: Size;
+	mass: Weight;
+	payload_weights: object[]; //TODO Not sure
+	first_stage: FirstStage;
+	second_stage: SecondStage;
+	engines: {
+		number: number;
+		type: string;
+		version: string;
+		layout: string;
+		isp: {
+			sea_level: number;
+			vacuum: number;
+		};
+		engine_loss_max: number;
+		propellant_1: string;
+		propellant_2: string;
+		thrust_sea_level: Thrust;
+		thrust_vacuum: Thrust;
+		thrust_to_weight: number;
+	};
+	landing_legs: {
+		number: number;
+		material: object;
+	};
+	flickr_images: string;
+	wikipedia: string;
+	description: string;
 };
