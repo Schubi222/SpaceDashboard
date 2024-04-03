@@ -1,8 +1,4 @@
 <script lang="ts">
-import type { LaunchResponse } from '$lib/types/spacex/apiResponse';
-
-const test:LaunchResponse={} as LaunchResponse
-
 </script>
 
 <svelte:head>
