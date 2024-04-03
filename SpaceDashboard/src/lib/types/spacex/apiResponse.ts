@@ -1,6 +1,7 @@
 import type {
 	Cores,
 	Crew,
+	Engine,
 	Fairings,
 	FirstStage,
 	Links,
@@ -62,22 +63,7 @@ export type RocketsResponse = {
 	payload_weights: object[]; //TODO Not sure
 	first_stage: FirstStage;
 	second_stage: SecondStage;
-	engines: {
-		number: number;
-		type: string;
-		version: string;
-		layout: string;
-		isp: {
-			sea_level: number;
-			vacuum: number;
-		};
-		engine_loss_max: number;
-		propellant_1: string;
-		propellant_2: string;
-		thrust_sea_level: Thrust;
-		thrust_vacuum: Thrust;
-		thrust_to_weight: number;
-	};
+	engines: Engine;
 	landing_legs: {
 		number: number;
 		material: object;

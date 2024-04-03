@@ -79,3 +79,19 @@ export type Weight = {
 	kg: number;
 	lb: number;
 };
+export type Engine = {
+	number: number;
+	type: string;
+	version: string;
+	layout: string;
+	isp: {
+		sea_level: number;
+		vacuum: number;
+	};
+	engine_loss_max: number;
+	propellant_1: string;
+	propellant_2: string;
+	thrust_sea_level: Thrust;
+	thrust_vacuum: Thrust;
+	thrust_to_weight: number;
+};
