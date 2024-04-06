@@ -95,3 +95,40 @@ export type Engine = {
 	thrust_vacuum: Thrust;
 	thrust_to_weight: number;
 };
+export type Dragon = {
+	capsule: string | null; //UUID
+	mass_returned_kg: number | null;
+	mass_returned_lbs: number | null;
+	flight_time_sec: number | null;
+	manifest: string | null;
+	water_landing: boolean | null;
+	land_landing: boolean | null;
+};
+export type Headquarters = {
+	address: string;
+	city: string;
+	state: string;
+};
+export type Status = 'unknown' | 'active' | 'retired' | 'destroyed';
+export type PadStatus =
+	| 'active'
+	| 'inactive'
+	| 'unknown'
+	| 'retired'
+	| 'lost'
+	| 'under construction';
+export type HeatShield = {
+	material: string;
+	size_meters: number;
+	temp_degrees: number;
+	dev_partner: string;
+};
+
+export type Volume = {
+	cubic_meters: {
+		type: 'Number';
+	};
+	cubic_feet: {
+		type: 'Number';
+	};
+};
