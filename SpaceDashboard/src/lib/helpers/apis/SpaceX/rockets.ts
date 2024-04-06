@@ -1,13 +1,10 @@
-import { BASE_SPACEX, endpoints } from '$lib/helpers/apis/SpaceX/constants';
+import { endpoints } from '$lib/helpers/apis/SpaceX/constants';
 import type { RocketsResponse } from '$lib/types/spacex/apiResponse';
+import { getAllOfEntity, getEntityById } from '$lib/helpers/apis/SpaceX/BaseQueries';
 
-export async function getRocketById(id: string) {
-	const url = BASE_SPACEX + endpoints.rockets + '/' + id;
-	try {
-		const response = await fetch(url, { method: 'get', mode: 'cors' });
-		return (await response.json()) as RocketsResponse;
-	} catch (e) {
-		//TODO: ERROR HANDLING
-		console.error(e);
-	}
+export async function getRocketsById(id: string) {
+	return await getEntityById<RocketsResponse>(id, endpoints.rockets);
+}
+export async function getAllRockets() {
+	return await getAllOfEntity<RocketsResponse>(endpoints.rockets);
 }

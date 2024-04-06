@@ -164,7 +164,7 @@ export type CrewResponse = {
 	launches: string[];
 };
 
-export type DragonResponse = {
+export type DragonsResponse = {
 	name: string;
 	type: string;
 	active: boolean;
@@ -207,7 +207,7 @@ export type HistoryResponse = {
 	};
 };
 
-export type LandingPadResponse = {
+export type LandPadsResponse = {
 	name: string | null;
 	full_name: string | null;
 	status: PadStatus;
@@ -223,7 +223,7 @@ export type LandingPadResponse = {
 	launches: string[];
 };
 
-export type LaunchPadResponse = {
+export type LaunchPadsResponse = {
 	name: string | null;
 	full_name: string | null;
 	status: PadStatus;
@@ -267,7 +267,7 @@ export type RoadsterResponse = {
 	details: string;
 };
 
-export type ShipResponse = {
+export type ShipsResponse = {
 	name: string;
 	legacy_id: string | null;
 	model: string | null;
