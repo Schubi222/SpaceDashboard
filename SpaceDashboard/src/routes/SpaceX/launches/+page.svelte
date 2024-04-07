@@ -6,7 +6,6 @@
 		RocketsResponse
 	} from '$lib/types/spacex/apiResponse';
 	import { getNextLaunch } from '$lib/helpers/apis/SpaceX/launches';
-	import NextLaunch from '$lib/components/NextLaunch.svelte';
 	import { getRocketsById } from '$lib/helpers/apis/SpaceX/rockets';
 	import Launch from '$lib/components/Launch.svelte';
 	import { getLaunchPadsById } from '$lib/helpers/apis/SpaceX/launchpads';

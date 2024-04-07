@@ -5,7 +5,8 @@
 		RocketsResponse
 	} from '$lib/types/spacex/apiResponse';
 	import { onMount } from 'svelte';
-
+	import '../styles/launch.scss';
+	import { reddit, reddit_inactive } from '$lib/assets';
 	export let launch: LaunchResponse;
 	export let rocket: RocketsResponse;
 	export let launchpad: LaunchPadsResponse;
@@ -31,4 +32,9 @@
 	<div class="launchpad info">{launchpad?.name}</div>
 	<div class="label">Details</div>
 	<div class="details info">{launch.details ?? 'No details about this launch were provided.'}</div>
+	<div class="links">
+		<img src={launch.links.wikipedia ? '' : ''} alt="Wikipedia" class="links__img" />
+		<img src={launch.links.reddit ? reddit : reddit_inactive} alt="Reddit" class="links__img" />
+		<img src={launch.links.youtube_id ? '' : ''} alt="Youtube" class="links__img" />
+	</div>
 </div>
