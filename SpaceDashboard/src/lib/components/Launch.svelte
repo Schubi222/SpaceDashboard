@@ -33,8 +33,8 @@
 	<div class="label">Details</div>
 	<div class="details info">{launch.details ?? 'No details about this launch were provided.'}</div>
 	<div class="links">
-		<img src={launch.links.wikipedia ? wikipedia : wikipedia_inactive} alt="Wikipedia" class="links__img" />
-		<img src={launch.links.reddit ? reddit : reddit_inactive} alt="Reddit" class="links__img" />
-		<img src={launch.links.youtube_id ? youtube : youtube_inactive} alt="Youtube" class="links__img" />
+		<img src={launch?.links?.wikipedia ? wikipedia : wikipedia_inactive} alt="Wikipedia" class="links__img" />
+		<img src={launch?.links?.reddit ? reddit : reddit_inactive} alt="Reddit" class="links__img" />
+		<img src={launch?.links?.youtube_id ? youtube : youtube_inactive} alt="Youtube" class="links__img" />
 	</div>
 </div>
