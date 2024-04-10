@@ -6,7 +6,14 @@
 	} from '$lib/types/spacex/apiResponse';
 	import { onMount } from 'svelte';
 	import '../styles/launch.scss';
-	import { reddit, reddit_inactive, wikipedia, wikipedia_inactive, youtube, youtube_inactive } from '$lib/assets';
+	import {
+		reddit,
+		reddit_inactive,
+		wikipedia,
+		wikipedia_inactive,
+		youtube,
+		youtube_inactive
+	} from '$lib/assets';
 	import SocialMediaIcon from '$lib/components/SocialMediaIcon.svelte';
 	export let launch: LaunchResponse;
 	export let rocket: RocketsResponse;
@@ -34,25 +41,41 @@
 	<div class="label">Details</div>
 	<div class="details info">{launch.details ?? 'No details about this launch were provided.'}</div>
 	<div class="links">
-		<SocialMediaIcon active_icon={wikipedia} inactive_icon={wikipedia_inactive} link={launch?.links? .wikipedia} title="Wikipedia"/>
-		<SocialMediaIcon active_icon={reddit} inactive_icon={reddit_inactive} link={launch?.links?.reddit?.launch} title="Reddit"/>
-		<SocialMediaIcon active_icon={youtube} inactive_icon={youtube_inactive} link={launch?.links?.webcast} title="YouTube"/>
+		<SocialMediaIcon
+			active_icon={wikipedia}
+			inactive_icon={wikipedia_inactive}
+			link={launch?.links?.wikipedia}
+			title="Wikipedia"
+		/>
+		<SocialMediaIcon
+			active_icon={reddit}
+			inactive_icon={reddit_inactive}
+			link={launch?.links?.reddit?.launch}
+			title="Reddit"
+		/>
+		<SocialMediaIcon
+			active_icon={youtube}
+			inactive_icon={youtube_inactive}
+			link={launch?.links?.webcast}
+			title="YouTube"
+		/>
 	</div>
 </div>
-<style lang="scss">
-    .Wrapper {
-        padding: 10px;
-        background: rgba(214, 212, 212, 0.31);
-        color: var(--grey-8);
-        max-width: 800px;
-        border-radius: 15px;
-        font-size: 20px;
 
-        .label {
-            color: var(--grey-5);
-        }
-				.links{
-						display: flex;
-				}
-    }
+<style lang="scss">
+	.Wrapper {
+		padding: 10px;
+		background: rgba(214, 212, 212, 0.31);
+		color: var(--grey-8);
+		max-width: 800px;
+		border-radius: 15px;
+		font-size: 20px;
+
+		.label {
+			color: var(--grey-5);
+		}
+		.links {
+			display: flex;
+		}
+	}
 </style>

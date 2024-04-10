@@ -6,7 +6,7 @@
 </script>
 
 {#if link}
-	<a href={link} class="link">
+	<a href={link} class="link" target="_blank">
 		<img src={active_icon} alt={title} class="link__img" />
 	</a>
 {:else}
@@ -18,11 +18,19 @@
 <style lang="scss">
 	.link {
 		cursor: pointer;
+		transition: 0.4s;
 		&__img {
 			width: 40px;
 			height: 40px;
 			border-radius: 100%;
-			padding: 5px;
+			margin: 5px;
+		}
+		& > &__img {
+			box-shadow: 0 3px 3px var(--grey-1);
+			transition: 0.4s;
+			&:hover {
+				box-shadow: none;
+			}
 		}
 	}
 </style>
