@@ -32,7 +32,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@prettier/plugin-xml": "^3.4.1",
 		"sass": "^1.72.0",
 		"svelte-loading-spinners": "^0.3.4"
 	}

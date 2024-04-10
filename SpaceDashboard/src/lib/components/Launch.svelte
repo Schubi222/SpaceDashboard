@@ -7,12 +7,13 @@
 	import { onMount } from 'svelte';
 	import '../styles/launch.scss';
 	import { reddit, reddit_inactive, wikipedia, wikipedia_inactive, youtube, youtube_inactive } from '$lib/assets';
+	import SocialMediaIcon from '$lib/components/SocialMediaIcon.svelte';
 	export let launch: LaunchResponse;
 	export let rocket: RocketsResponse;
 	export let launchpad: LaunchPadsResponse;
 	export let heading: string;
 	onMount(() => {
-		console.log(launch, rocket);
+		console.log(launch?.links);
 	});
 </script>
 
@@ -33,8 +34,25 @@
 	<div class="label">Details</div>
 	<div class="details info">{launch.details ?? 'No details about this launch were provided.'}</div>
 	<div class="links">
-		<img src={launch?.links?.wikipedia ? wikipedia : wikipedia_inactive} alt="Wikipedia" class="links__img" />
-		<img src={launch?.links?.reddit ? reddit : reddit_inactive} alt="Reddit" class="links__img" />
-		<img src={launch?.links?.youtube_id ? youtube : youtube_inactive} alt="Youtube" class="links__img" />
+		<SocialMediaIcon active_icon={wikipedia} inactive_icon={wikipedia_inactive} link={launch?.links? .wikipedia} title="Wikipedia"/>
+		<SocialMediaIcon active_icon={reddit} inactive_icon={reddit_inactive} link={launch?.links?.reddit?.launch} title="Reddit"/>
+		<SocialMediaIcon active_icon={youtube} inactive_icon={youtube_inactive} link={launch?.links?.webcast} title="YouTube"/>
 	</div>
 </div>
+<style lang="scss">
+    .Wrapper {
+        padding: 10px;
+        background: rgba(214, 212, 212, 0.31);
+        color: var(--grey-8);
+        max-width: 800px;
+        border-radius: 15px;
+        font-size: 20px;
+
+        .label {
+            color: var(--grey-5);
+        }
+				.links{
+						display: flex;
+				}
+    }
+</style>
