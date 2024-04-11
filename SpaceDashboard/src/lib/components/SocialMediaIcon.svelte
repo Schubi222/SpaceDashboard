@@ -26,7 +26,7 @@
 			margin: 5px;
 		}
 		& > &__img {
-			box-shadow: 0 3px 3px var(--grey-1);
+			box-shadow: 0 2px 2px 1px var(--grey-1);
 			transition: 0.4s;
 			&:hover {
 				box-shadow: none;

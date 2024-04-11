@@ -75,6 +75,7 @@ export type RocketsResponse = {
 	flickr_images: string;
 	wikipedia: string;
 	description: string;
+	id: string;
 };
 
 export type PayloadsResponse = {
@@ -105,6 +106,7 @@ export type PayloadsResponse = {
 	arg_of_pericenter: number | null;
 	mean_anomaly: number | null;
 	dragon: Dragon;
+	id: string;
 };
 
 export type CapsuleResponse = {
@@ -117,6 +119,7 @@ export type CapsuleResponse = {
 	land_landings: number;
 	last_update: string | null;
 	launches: string[];
+	id: string;
 };
 
 export type CompanyResponse = {
@@ -140,6 +143,7 @@ export type CompanyResponse = {
 		elon_twitter: string;
 	};
 	summary: string;
+	id: string;
 };
 
 export type CoresResponse = {
@@ -153,6 +157,7 @@ export type CoresResponse = {
 	asds_landings: number;
 	last_update: string | null;
 	launches: string[];
+	id: string;
 };
 
 export type CrewResponse = {
@@ -162,6 +167,7 @@ export type CrewResponse = {
 	image: string | null;
 	wikipedia: string | null;
 	launches: string[];
+	id: string;
 };
 
 export type DragonsResponse = {
@@ -195,6 +201,7 @@ export type DragonsResponse = {
 	flickr_images: string[];
 	wikipedia: string;
 	description: string;
+	id: string;
 };
 
 export type HistoryResponse = {
@@ -205,6 +212,7 @@ export type HistoryResponse = {
 	links: {
 		article: string | null;
 	};
+	id: string;
 };
 
 export type LandPadsResponse = {
@@ -221,6 +229,7 @@ export type LandPadsResponse = {
 	wikipedia: string | null;
 	details: string | null;
 	launches: string[];
+	id: string;
 };
 
 export type LaunchPadsResponse = {
@@ -236,6 +245,7 @@ export type LaunchPadsResponse = {
 	launch_successes: number;
 	rockets: string[];
 	launches: string[];
+	id: string;
 };
 
 export type RoadsterResponse = {
@@ -265,6 +275,7 @@ export type RoadsterResponse = {
 	wikipedia: string;
 	video: string;
 	details: string;
+	id: string;
 };
 
 export type ShipsResponse = {
@@ -291,9 +302,11 @@ export type ShipsResponse = {
 	link: string | null;
 	image: string | null;
 	launches: string[];
+	id: string;
 };
 
 export type StarLinkResponse = {
+	id: string;
 	version: string | null;
 	launch: string | null;
 	longitude: number | null;
