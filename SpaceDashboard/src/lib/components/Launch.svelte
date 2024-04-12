@@ -17,13 +17,14 @@
 	} from '$lib/assets';
 	import SocialMediaIcon from '$lib/components/SocialMediaIcon.svelte';
 	import { getAllRockets } from '$lib/helpers/apis/SpaceX/rockets';
-	import { goto } from '$app/navigation';
+	import moment from 'moment';
 
 	export let launch: LaunchResponse;
 	export let rocket: RocketsResponse;
 	export let launchpad: LaunchPadsResponse;
 	export let payload: PayloadsResponse;
 	export let heading: string;
+
 	onMount(async () => {
 		console.log(await getAllRockets());
 	});
@@ -36,15 +37,17 @@
 			<div class="label">Mission</div>
 			<div class="mission info">{launch.name}</div>
 			<div class="label">Rocket</div>
-			<div class="rocket info clickable" on:click={() => goto('rocket/' + rocket.id)}>
+			<a class="rocket info clickable" href={'rocket/' + rocket.id}>
 				{rocket.name}<span>&rarr;</span>
-			</div>
+			</a>
 			<div class="label">Date</div>
-			<div class="date info">{launch.date_utc}</div>
-			<div class="label">Launchpad</div>
-			<div class="launchpad info clickable" on:click={() => goto('launchpad/' + launchpad.id)}>
-				{launchpad?.name}<span>&rarr;</span>
+			<div class="date info">
+				{moment.utc(launch.date_unix * 1000).format('DD/MM/YYYY, HH:mm:ss')}
 			</div>
+			<div class="label">Launchpad</div>
+			<a class="launchpad info clickable" href={'launchpad/' + launchpad.id}>
+				{launchpad?.name}<span>&rarr;</span>
+			</a>
 			<div class="label">Details</div>
 			<div class="details info">
 				{launch.details ?? 'No details about this launch were provided.'}
@@ -79,9 +82,9 @@
 				<img class="logo" src={rocket.flickr_images} alt="Mission" />
 			{/if}
 			<div class="label">Payload</div>
-			<div class="payload info clickable" on:click={() => goto('payload/' + payload.id)}>
+			<a class="payload info clickable" href={'payload/' + payload.id}>
 				{payload.name} <span>&rarr;</span>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>
