@@ -71,4 +71,8 @@
 	.active {
 		color: var(--green-4);
 	}
+	.Stage-Wrapper {
+		display: flex;
+		gap: 20px;
+	}
 </style>
