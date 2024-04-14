@@ -23,7 +23,11 @@
 			</div>
 			<div class="label">Rockets</div>
 			{#if rockets}
-				<div class="info">{rockets.map((r) => r.name)}</div>
+				<div class="info">
+					{#each rockets as rocket}
+						<a href={'/rocket/' + rocket.id} class="clickable">{rocket.name}</a>
+					{/each}
+				</div>
 			{:else}
 				<div class="info">No rockets in this launchpad</div>
 			{/if}
@@ -33,3 +37,9 @@
 		<div class="right-side"></div>
 	</div>
 </div>
+
+<style lang="scss">
+	.clickable:not(:last-child):after {
+		content: ', ';
+	}
+</style>
