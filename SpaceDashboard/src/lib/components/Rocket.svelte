@@ -5,7 +5,7 @@
 
 	export let rocket: RocketsResponse;
 	export let company: CompanyResponse;
-	let showing_info: null | string = 'stage';
+	let showing_info: null | string = null;
 </script>
 
 <div class="Wrapper">
@@ -27,6 +27,8 @@
 			</div>
 			<div class="label">Success Rate</div>
 			<div class="info">{rocket.success_rate_pct}</div>
+			<div class="label">First Flight</div>
+			<div class="info">{rocket.first_flight}</div>
 		</div>
 		<div class="right-side">
 			<div class="label">Image</div>
@@ -39,9 +41,6 @@
 			<div class="info">{rocket.diameter.meters} m | {rocket.height.meters} m</div>
 			<div class="label">Engine Type</div>
 			<div class="info">{rocket.engines.type}</div>
-
-			<div class="label">First Flight</div>
-			<div class="info">{rocket.first_flight}</div>
 			<div class="label">Landing Legs</div>
 			<div class="info">{rocket.landing_legs.number} {rocket.landing_legs.material}</div>
 		</div>
