@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { CompanyResponse, RocketsResponse } from '$lib/types/spacex/apiResponse';
 	import Engine from '$lib/components/Engine.svelte';
+	import Stage from '$lib/components/Stage.svelte';
 
 	export let rocket: RocketsResponse;
 	export let company: CompanyResponse;
@@ -32,10 +33,10 @@
 			<img class="logo" src={rocket.flickr_images?.at(0)} alt="Rocket" />
 			<div class="label">Booster</div>
 			<div class="info">{rocket.boosters}</div>
-			<div class="label">Diameter</div>
-			<div class="info">{rocket.diameter.meters}</div>
-			<div class="label">Height</div>
-			<div class="info">{rocket.height.meters}</div>
+			<div class="label">Stages</div>
+			<div class="info">{rocket.stages}</div>
+			<div class="label">Size (Diameter|Height)</div>
+			<div class="info">{rocket.diameter.meters} m | {rocket.height.meters} m</div>
 			<div class="label">Engine Type</div>
 			<div class="info">{rocket.engines.type}</div>
 
@@ -55,7 +56,10 @@
 		{#if showing_info === 'engine'}
 			<Engine bind:rocket />
 		{:else if showing_info === 'stage'}
-			STAGE
+			<div class="Stage-Wrapper">
+				<Stage heading="Stage 1" bind:stage={rocket.first_stage} />
+				<Stage heading="Stage 2" bind:stage={rocket.second_stage} />
+			</div>
 		{/if}
 	</div>
 </div>
