@@ -9,7 +9,7 @@
 <div class="label">Specific Impulse (Sea|Vacuum)</div>
 <div class="info">
 	<!--				TODO: DOUBLE CHECK -->
-	{rocket.engines.isp.sea_level}m/s | {rocket.engines.isp.vacuum}m/s
+	{rocket.engines.isp.sea_level} m/s | {rocket.engines.isp.vacuum} m/s
 </div>
 <div class="label">Layout</div>
 <div class="info">{rocket.engines.layout}</div>
@@ -23,7 +23,7 @@
 </div>
 <div class="label">Thrust(Sea|Vacuum)</div>
 <div class="info">
-	{rocket.engines.thrust_sea_level.kN}kN | {rocket.engines.thrust_vacuum.kN}kN
+	{rocket.engines.thrust_sea_level.kN} kN | {rocket.engines.thrust_vacuum.kN} kN
 </div>
 <div class="label">TWR</div>
 <div class="info">{rocket.engines.thrust_to_weight}</div>
