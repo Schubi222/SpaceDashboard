@@ -48,6 +48,7 @@ export type LaunchResponse = {
 	launchpad: string | null;
 	cores: Cores;
 	auto_update: boolean;
+	id: string;
 };
 
 export type RocketsResponse = {
