@@ -4,7 +4,7 @@
 export const BASE_SPACEX = 'https://api.spacexdata.com/latest/';
 
 export enum endpoints {
-	capsule = 'capsule',
+	capsules = 'capsules',
 	company = 'company',
 	cores = 'cores',
 	crew = 'crew',
