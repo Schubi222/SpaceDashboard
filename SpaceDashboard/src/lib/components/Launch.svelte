@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type {
+		CapsuleResponse,
+		CrewResponse,
 		LaunchPadsResponse,
 		LaunchResponse,
 		PayloadsResponse,
@@ -16,18 +18,16 @@
 		youtube_inactive
 	} from '$lib/assets';
 	import SocialMediaIcon from '$lib/components/SocialMediaIcon.svelte';
-	import { getAllRockets } from '$lib/helpers/apis/SpaceX/rockets';
 	import moment from 'moment';
+	import Crew from '$lib/components/Crew.svelte';
+	import CrewCount from '$lib/components/CrewCount.svelte';
 
 	export let launch: LaunchResponse;
 	export let rocket: RocketsResponse;
 	export let launchpad: LaunchPadsResponse;
 	export let payload: PayloadsResponse;
+	export let crew: CrewResponse[] | undefined;
 	export let heading: string;
-
-	onMount(async () => {
-		console.log(await getAllRockets());
-	});
 </script>
 
 <div class="Wrapper">
@@ -81,10 +81,14 @@
 				<div class="label">Rocket Logo</div>
 				<img class="logo" src={rocket.flickr_images} alt="Mission" />
 			{/if}
-			<div class="label">Payload</div>
-			<a class="payload info clickable" href={'/SpaceX/payload/' + payload.id}>
-				{payload.name} <span>&rarr;</span>
-			</a>
+			<div class="label">{payload?.dragon?.capsule ? 'Crew' : 'Payload'}</div>
+			{#if payload?.dragon?.capsule && crew}
+				<CrewCount bind:crew />
+			{:else}
+				<a class="payload info clickable" href={'/SpaceX/payload/' + payload.id}>
+					{payload.name} <span>&rarr;</span>
+				</a>
+			{/if}
 		</div>
 	</div>
 </div>

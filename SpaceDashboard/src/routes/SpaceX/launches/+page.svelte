@@ -1,41 +1,32 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import type {
-		LaunchPadsResponse,
-		LaunchResponse,
-		PayloadsResponse,
-		RocketsResponse
-	} from '$lib/types/spacex/apiResponse';
-	import { getNextLaunch } from '$lib/helpers/apis/SpaceX/launches';
-	import { getRocketsById } from '$lib/helpers/apis/SpaceX/rockets';
 	import Launch from '$lib/components/Launch.svelte';
-	import { getLaunchPadsById } from '$lib/helpers/apis/SpaceX/launchpads';
-	import { getPayloadsById } from '$lib/helpers/apis/SpaceX/payloads';
-	let nextLaunch: LaunchResponse | undefined;
-	let nextLaunchRocket: RocketsResponse | undefined;
-	let nextLaunchLaunchpad: LaunchPadsResponse | undefined;
-	let nextPayload: PayloadsResponse | undefined;
 
-	onMount(async () => {
-		//TODO THIS WILL TAKE FOR EVER
-		nextLaunch = await getNextLaunch();
-		if (nextLaunch) {
-			if (nextLaunch?.rocket) nextLaunchRocket = await getRocketsById(nextLaunch.rocket);
-			if (nextLaunch?.launchpad)
-				nextLaunchLaunchpad = await getLaunchPadsById(nextLaunch.launchpad);
-			if (nextLaunch?.payloads?.length) nextPayload = await getPayloadsById(nextLaunch.payloads[0]);
-		}
-	});
+	export let data;
+	let next = data.next;
+	let prev = data.prev;
 </script>
 
-{#if nextLaunch && nextLaunchRocket && nextLaunchLaunchpad && nextPayload}
+{#if next && next.nextLaunch && next.launchpad && next.rocket && next.payload}
 	<Launch
-		bind:launch={nextLaunch}
-		bind:rocket={nextLaunchRocket}
-		bind:launchpad={nextLaunchLaunchpad}
-		bind:payload={nextPayload}
+		bind:launch={next.nextLaunch}
+		bind:rocket={next.rocket}
+		bind:launchpad={next.launchpad}
+		bind:payload={next.payload}
+		bind:crew={next.crew}
 		heading="Next Launch"
 	/>
 {:else}
 	no next launch found
+{/if}
+{#if prev && prev.prevLaunch && prev.launchpad && prev.rocket && prev.payload}
+	<Launch
+		bind:launch={prev.prevLaunch}
+		bind:rocket={prev.rocket}
+		bind:launchpad={prev.launchpad}
+		bind:payload={prev.payload}
+		bind:crew={prev.crew}
+		heading="prev Launch"
+	/>
+{:else}
+	no prev launch found
 {/if}
