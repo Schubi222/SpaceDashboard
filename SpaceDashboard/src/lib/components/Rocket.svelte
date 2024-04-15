@@ -14,7 +14,7 @@
 	<div class="divider">
 		<div class="left-side">
 			<div class="label">Company</div>
-			<a class="rocket info clickable" href={'company/' + company.id}>
+			<a class="rocket info clickable" href={'/SpaceX/company/' + company.id}>
 				{company.name}<span>&rarr;</span>
 			</a>
 			<div class="label">Country</div>

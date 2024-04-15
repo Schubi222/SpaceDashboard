@@ -25,7 +25,7 @@
 			{#if rockets}
 				<div class="info">
 					{#each rockets as rocket}
-						<a href={'/rocket/' + rocket.id} class="clickable">{rocket.name}</a>
+						<a href={'/SpaceX/rocket/' + rocket.id} class="clickable">{rocket.name}</a>
 					{/each}
 				</div>
 			{:else}

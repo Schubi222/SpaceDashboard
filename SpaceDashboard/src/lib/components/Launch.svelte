@@ -37,7 +37,7 @@
 			<div class="label">Mission</div>
 			<div class="mission info">{launch.name}</div>
 			<div class="label">Rocket</div>
-			<a class="rocket info clickable" href={'rocket/' + rocket.id}>
+			<a class="rocket info clickable" href={'/SpaceX/rocket/' + rocket.id}>
 				{rocket.name}<span>&rarr;</span>
 			</a>
 			<div class="label">Date</div>
@@ -45,7 +45,7 @@
 				{moment.utc(launch.date_unix * 1000).format('DD/MM/YYYY, HH:mm:ss')}
 			</div>
 			<div class="label">Launchpad</div>
-			<a class="launchpad info clickable" href={'launchpad/' + launchpad.id}>
+			<a class="launchpad info clickable" href={'/SpaceX/launchpad/' + launchpad.id}>
 				{launchpad?.name}<span>&rarr;</span>
 			</a>
 			<div class="label">Details</div>
@@ -82,7 +82,7 @@
 				<img class="logo" src={rocket.flickr_images} alt="Mission" />
 			{/if}
 			<div class="label">Payload</div>
-			<a class="payload info clickable" href={'payload/' + payload.id}>
+			<a class="payload info clickable" href={'/SpaceX/payload/' + payload.id}>
 				{payload.name} <span>&rarr;</span>
 			</a>
 		</div>
