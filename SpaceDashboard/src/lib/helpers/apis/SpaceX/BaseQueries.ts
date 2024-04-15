@@ -8,7 +8,7 @@ export async function getEntityById<Type>(
 	try {
 		const response = await fetch(url, { method: 'get', mode: 'cors' });
 		const data = (await response.json()) as Type;
-		console.log('getEntityById of type:', typeof data, '\nWith Data:', data);
+		// console.log('getEntityById of type:', typeof data, '\nWith Data:', data);
 		return data;
 	} catch (e) {
 		//TODO: ERROR HANDLING
@@ -20,7 +20,7 @@ export async function getAllOfEntity<Type>(endpoint: endpoints): Promise<Type[] 
 	try {
 		const response = await fetch(url, { method: 'get', mode: 'cors' });
 		const data = (await response.json()) as Type[];
-		console.log('getAllOfEntity of type:', typeof data, '\nWith Data:', data);
+		// console.log('getAllOfEntity of type:', typeof data, '\nWith Data:', data);
 		return data;
 	} catch (e) {
 		//TODO: ERROR HANDLING
