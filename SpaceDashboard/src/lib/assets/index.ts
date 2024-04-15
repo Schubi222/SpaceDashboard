@@ -4,5 +4,6 @@ import youtube from './youtube.svg';
 import youtube_inactive from './youtube_inative.svg';
 import wikipedia from './wikipedia.svg';
 import wikipedia_inactive from './wikipedia_inactive.svg';
+import crew from './crew.svg';
 
-export { reddit_inactive, reddit, youtube, youtube_inactive, wikipedia,wikipedia_inactive };
+export { reddit_inactive, reddit, youtube, youtube_inactive, wikipedia, wikipedia_inactive, crew };
