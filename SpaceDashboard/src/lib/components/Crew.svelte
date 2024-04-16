@@ -1,12 +1,14 @@
 <script lang="ts">
 	import type { CrewResponse, LaunchResponse } from '$lib/types/spacex/apiResponse';
 	import CrewMember from '$lib/components/CrewMember.svelte';
+	import BackBtn from '$lib/components/BackBtn.svelte';
 
 	export let crew: CrewResponse[];
 	export let launch: LaunchResponse;
 </script>
 
 <div class="Wrapper">
+	<BackBtn />
 	<div class="heading">Crew of {launch.name}</div>
 	<div class="row">
 		{#each crew as member, index}
