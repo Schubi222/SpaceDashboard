@@ -1,13 +1,11 @@
 <script lang="ts">
 	import type {
-		CapsuleResponse,
 		CrewResponse,
 		LaunchPadsResponse,
 		LaunchResponse,
 		PayloadsResponse,
 		RocketsResponse
 	} from '$lib/types/spacex/apiResponse';
-	import { onMount } from 'svelte';
 	import '../styles/launch.scss';
 	import {
 		reddit,
@@ -19,7 +17,6 @@
 	} from '$lib/assets';
 	import SocialMediaIcon from '$lib/components/SocialMediaIcon.svelte';
 	import moment from 'moment';
-	import Crew from '$lib/components/Crew.svelte';
 	import CrewCount from '$lib/components/CrewCount.svelte';
 
 	export let launch: LaunchResponse;
@@ -84,6 +81,9 @@
 			<div class="label">{payload?.dragon?.capsule ? 'Crew' : 'Payload'}</div>
 			{#if payload?.dragon?.capsule && crew}
 				<CrewCount bind:crew />
+				<a class="payload info clickable" href={'/SpaceX/crew/' + launch.id}>
+					Crew details <span>&rarr;</span>
+				</a>
 			{:else}
 				<a class="payload info clickable" href={'/SpaceX/payload/' + payload.id}>
 					{payload.name} <span>&rarr;</span>

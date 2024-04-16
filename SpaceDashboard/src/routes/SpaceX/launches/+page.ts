@@ -1,5 +1,4 @@
 import type {
-	CapsuleResponse,
 	CrewResponse,
 	LaunchPadsResponse,
 	LaunchResponse,

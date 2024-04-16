@@ -10,6 +10,7 @@
 		bind:rocket={data.rocket}
 		bind:launchpad={data.launchpad}
 		bind:payload={data.payload}
+		bind:crew={data.crew}
 		heading={data.launch.name}
 	/>
 {:else}
