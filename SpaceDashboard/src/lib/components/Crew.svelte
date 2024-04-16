@@ -10,7 +10,23 @@
 	<div class="heading">Crew of {launch.name}</div>
 	<div class="row">
 		{#each crew as member, index}
-			<CrewMember bind:member role={launch.crew[index].role} />
+			<CrewMember bind:member bind:role={launch.crew[index].role} />
 		{/each}
 	</div>
 </div>
+
+<style lang="scss">
+	.Wrapper {
+		width: fit-content;
+		max-width: unset;
+		margin: auto;
+		padding: 50px;
+
+		.row {
+			display: flex;
+			flex-direction: row;
+			gap: 30px;
+			margin-inline: auto;
+		}
+	}
+</style>

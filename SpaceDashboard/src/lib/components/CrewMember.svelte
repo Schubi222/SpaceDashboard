@@ -2,7 +2,7 @@
 	import type { CrewResponse } from '$lib/types/spacex/apiResponse';
 
 	export let member: CrewResponse;
-	export let role: string;
+	export let role: string | null;
 </script>
 
 <div class="Crew_Wrapper">
@@ -18,3 +18,11 @@
 	<div class="label">Launches</div>
 	<div class="info">{member.launches.length}</div>
 </div>
+
+<style lang="scss">
+	img {
+		width: 250px;
+		height: 300px;
+		border-radius: 10px;
+	}
+</style>
