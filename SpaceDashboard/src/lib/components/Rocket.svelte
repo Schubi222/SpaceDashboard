@@ -14,9 +14,13 @@
 	<div class="divider">
 		<div class="left-side">
 			<div class="label">Company</div>
-			<a class="rocket info clickable" href={'/SpaceX/company/' + company.id}>
-				{company.name}<span>&rarr;</span>
-			</a>
+			{#if company?.name === 'SpaceX'}
+				<a class="rocket info clickable" href={'/SpaceX/company'}>
+					{company.name}<span>&rarr;</span>
+				</a>
+			{:else}
+				<div class="info">{company.name}</div>
+			{/if}
 			<div class="label">Country</div>
 			<div class="info">{rocket.country}</div>
 			<div class="label">Cost per launch</div>
