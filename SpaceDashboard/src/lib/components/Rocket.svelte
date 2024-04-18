@@ -2,6 +2,7 @@
 	import type { CompanyResponse, RocketsResponse } from '$lib/types/spacex/apiResponse';
 	import Engine from '$lib/components/Engine.svelte';
 	import Stage from '$lib/components/Stage.svelte';
+	import BackBtn from '$lib/components/BackBtn.svelte';
 
 	export let rocket: RocketsResponse;
 	export let company: CompanyResponse;
@@ -9,6 +10,7 @@
 </script>
 
 <div class="Wrapper">
+	<BackBtn />
 	<div class="heading">{rocket.name}</div>
 	{rocket.description}
 	<div class="divider">

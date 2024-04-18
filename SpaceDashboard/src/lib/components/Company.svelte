@@ -1,7 +1,5 @@
 <script lang="ts">
 	import type { CompanyResponse } from '$lib/types/spacex/apiResponse';
-	import SocialMediaIcon from '$lib/components/SocialMediaIcon.svelte';
-
 	export let spaceX: CompanyResponse;
 </script>
 

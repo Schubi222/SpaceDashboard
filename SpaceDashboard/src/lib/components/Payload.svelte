@@ -1,11 +1,13 @@
 <script lang="ts">
 	import type { LaunchResponse, PayloadsResponse } from '$lib/types/spacex/apiResponse';
+	import BackBtn from '$lib/components/BackBtn.svelte';
 
 	export let payload: PayloadsResponse;
 	export let launch: LaunchResponse | undefined;
 </script>
 
 <div class="Wrapper">
+	<BackBtn />
 	<div class="heading">{payload.name}</div>
 	<div class="divider">
 		<div class="left-side">

@@ -1,11 +1,13 @@
 <script lang="ts">
 	import type { LaunchPadsResponse, RocketsResponse } from '$lib/types/spacex/apiResponse';
+	import BackBtn from '$lib/components/BackBtn.svelte';
 
 	export let launchpad: LaunchPadsResponse;
 	export let rockets: RocketsResponse[] | false;
 </script>
 
 <div class="Wrapper">
+	<BackBtn />
 	<div class="heading">{launchpad.full_name} ({launchpad.name})</div>
 	<div class="divider">
 		<div class="left-side">
