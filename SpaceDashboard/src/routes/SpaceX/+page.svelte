@@ -16,32 +16,43 @@
 		{:else}
 			Something went wrong while loading the company data.
 		{/if}
-
-		{#if next && next.nextLaunch && next.launchpad && next.rocket && next.payload}
-			<Launch
-				bind:launch={next.nextLaunch}
-				bind:rocket={next.rocket}
-				bind:launchpad={next.launchpad}
-				bind:payload={next.payload}
-				bind:crew={next.crew}
-				heading="Next Launch"
-			/>
-		{:else}
-			no next launch found
-		{/if}
-		{#if prev && prev.prevLaunch && prev.launchpad && prev.rocket && prev.payload}
-			<Launch
-				bind:launch={prev.prevLaunch}
-				bind:rocket={prev.rocket}
-				bind:launchpad={prev.launchpad}
-				bind:payload={prev.payload}
-				bind:crew={prev.crew}
-				heading="prev Launch"
-			/>
-		{:else}
-			no prev launch found
-		{/if}
+		<div class="Launch-Wrapper">
+			{#if next && next.nextLaunch && next.launchpad && next.rocket && next.payload}
+				<Launch
+					bind:launch={next.nextLaunch}
+					bind:rocket={next.rocket}
+					bind:launchpad={next.launchpad}
+					bind:payload={next.payload}
+					bind:crew={next.crew}
+					heading="Next Launch"
+				/>
+			{:else}
+				no next launch found
+			{/if}
+			{#if prev && prev.prevLaunch && prev.launchpad && prev.rocket && prev.payload}
+				<Launch
+					bind:launch={prev.prevLaunch}
+					bind:rocket={prev.rocket}
+					bind:launchpad={prev.launchpad}
+					bind:payload={prev.payload}
+					bind:crew={prev.crew}
+					heading="Previous Launch"
+				/>
+			{:else}
+				no prev launch found
+			{/if}
+		</div>
 	</div>
 {:else}
 	<Loading />
 {/if}
+
+<style lang="scss">
+	.Launch-Wrapper {
+		padding-top: 50px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 120px;
+	}
+</style>
