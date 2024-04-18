@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { CrewResponse } from '$lib/types/spacex/apiResponse';
+	import AgencyFlag from '$lib/components/AgencyFlag.svelte';
 
 	export let member: CrewResponse;
 	export let role: string | null;
@@ -12,7 +13,7 @@
 	<div class="label">Role</div>
 	<div class="info">{role}</div>
 	<div class="label">Agency</div>
-	<div class="info">{member.agency}</div>
+	<div class="info agency">{member.agency}<AgencyFlag bind:agency={member.agency} /></div>
 	<div class="label">Status</div>
 	<div class="info">{member.status}</div>
 	<div class="label">Launches</div>
@@ -24,5 +25,9 @@
 		width: 250px;
 		height: 300px;
 		border-radius: 10px;
+	}
+	.agency {
+		display: flex;
+		gap: 10px;
 	}
 </style>

@@ -9,7 +9,7 @@
 
 <div class="Wrapper">
 	<BackBtn />
-	<div class="heading">Crew of {launch.name}</div>
+	<div class="heading">Members of {launch?.name}</div>
 	<div class="row">
 		{#each crew as member, index}
 			<CrewMember bind:member bind:role={launch.crew[index].role} />
