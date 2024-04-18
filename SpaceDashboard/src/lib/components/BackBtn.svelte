@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="btn-wrapper noSelect" on:click={() => history.back()}>&larr;</div>
+<div class="btn-wrapper noSelect" on:click|self|preventDefault={() => history.back()}>&larr;</div>
 
 <style lang="scss">
 	.btn-wrapper {
