@@ -9,7 +9,7 @@ import us_flag from './us_flag.svg';
 import russia_flag from './russia_flag.svg';
 import japan_flag from './japan_flag.svg';
 import eu_flag from './eu_flag.svg';
-import spaceX from './SpaceX-Logo.svg';
+import spaceX_logo from './SpaceX-Logo.svg';
 
 export {
 	reddit_inactive,
@@ -23,5 +23,5 @@ export {
 	russia_flag,
 	japan_flag,
 	eu_flag,
-	spaceX
+	spaceX_logo
 };
