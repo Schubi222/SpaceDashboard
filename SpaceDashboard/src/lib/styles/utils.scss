@@ -33,7 +33,7 @@
 		cursor: pointer;
 		transition: 0.4s;
 		&:hover {
-			font-size: 32px;
+			color: var(--red-5);
 		}
 		& > span {
 			padding-left: 5px;

@@ -94,7 +94,7 @@
 			cursor: pointer;
 			transition: 0.4s;
 			&:hover {
-				scale: 1.2;
+				color: var(--red-5);
 			}
 		}
 	}
