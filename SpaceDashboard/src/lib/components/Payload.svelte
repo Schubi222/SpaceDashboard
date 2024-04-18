@@ -4,6 +4,12 @@
 
 	export let payload: PayloadsResponse;
 	export let launch: LaunchResponse | undefined;
+	let manufactures_dif = '';
+	$: if (payload?.manufacturers) {
+		payload.manufacturers.forEach((manu) => {
+			if (!payload.customers.includes(manu)) manufactures_dif += manu + ' ';
+		});
+	}
 </script>
 
 <div class="Wrapper">
@@ -13,10 +19,14 @@
 		<div class="left-side">
 			<div class="label">Type</div>
 			<div class="info">{payload.type}</div>
-			<div class="label">Customer</div>
-			<div class="info">{payload.customers}</div>
-			<div class="label">Manufacturers</div>
-			<div class="info">{payload.manufacturers}</div>
+			<div class="label">Customer| Manufacturers</div>
+			<div class="info">
+				{payload.customers}
+				{#if manufactures_dif}
+					| {manufactures_dif}
+				{/if}
+			</div>
+
 			<div class="label">Nationality</div>
 			<div class="info">{payload.nationalities}</div>
 			<div class="label">Launch</div>
@@ -28,7 +38,7 @@
 				<div class="info">There is no launch for this payload</div>
 			{/if}
 			<div class="label">Lifespan</div>
-			<div class="info">{payload.lifespan_years}</div>
+			<div class="info">{payload.lifespan_years ?? 'No lifespan provided'}</div>
 			<div class="label">Mass</div>
 			<div class="info">{payload.mass_kg} kg</div>
 			<div class="label">Orbit</div>
