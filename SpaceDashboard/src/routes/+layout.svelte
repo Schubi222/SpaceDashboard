@@ -15,3 +15,9 @@
 		<slot />
 	</div>
 {/if}
+
+<style lang="scss">
+	.content {
+		height: 100vh;
+	}
+</style>

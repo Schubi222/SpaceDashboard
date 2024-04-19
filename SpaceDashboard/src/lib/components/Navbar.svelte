@@ -10,33 +10,57 @@
 </script>
 
 <nav class="Navbar">
-	<a href="/SpaceX" class="Navbar__link" class:acitve={!active_page}>Dashboard</a>
-	<a href="/SpaceX/launches" class="Navbar__link" class:acitve={active_page === 1}>Launches</a>
-	<a href="/SpaceX/rocket" class="Navbar__link" class:acitve={active_page === 2}>Rockets</a>
-	<a href="/SpaceX/history" class="Navbar__link" class:acitve={active_page === 3}>History</a>
+	<div class="links">
+		<a href="/SpaceX" class="Navbar__link" class:acitve={!active_page}>Dashboard</a>
+		<a href="/SpaceX/launches" class="Navbar__link" class:acitve={active_page === 1}>Launches</a>
+		<a href="/SpaceX/rocket" class="Navbar__link" class:acitve={active_page === 2}>Rockets</a>
+		<a href="/SpaceX/history" class="Navbar__link" class:acitve={active_page === 3}>History</a>
+	</div>
+	<div class="arrow">&rAarr;</div>
 </nav>
 
 <style lang="scss">
 	.Navbar {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		background: white;
-		width: 200px;
+		width: 180px;
 		position: fixed;
-		top: 50vh;
+		top: calc(50vh - 130px);
 		gap: 5px;
-		padding: 30px 0;
-
-		& > a {
-			color: var(--blue-2);
-			font-size: 2rem;
-			text-decoration: none;
-			padding: 5px 0;
-			cursor: pointer;
-			transition: 0.4s;
-			&:hover {
-				color: var(--blue-5);
+		padding: 30px 10px;
+		left: -156px;
+		transition: ease-out 0.4s;
+		box-sizing: border-box;
+		border-bottom-right-radius: 15px;
+		border-top-right-radius: 15px;
+		&:hover {
+			left: 0;
+		}
+		&:hover > .arrow {
+			opacity: 0;
+		}
+		& > .links {
+			display: flex;
+			flex-direction: column;
+			& > a {
+				color: var(--blue-2);
+				font-size: 2rem;
+				text-decoration: none;
+				padding: 5px 0;
+				cursor: pointer;
+				transition: 0.4s;
+				&:hover {
+					color: var(--blue-5);
+				}
 			}
+		}
+		.arrow {
+			//height: 200px;
+			margin: auto 0;
+			opacity: 1;
+			font-size: 1.8rem;
+			transition: 0.2s ease-out;
 		}
 	}
 </style>
