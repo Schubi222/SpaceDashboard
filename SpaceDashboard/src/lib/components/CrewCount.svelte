@@ -14,5 +14,8 @@
 <style lang="scss">
 	.Crew-Wrapper {
 		display: flex;
+		img {
+			filter: drop-shadow(0 1px 1px var(--grey-3));
+		}
 	}
 </style>

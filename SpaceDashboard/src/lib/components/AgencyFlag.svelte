@@ -17,5 +17,6 @@
 <style lang="scss">
 	.flag {
 		width: 30px;
+		filter: drop-shadow(0 1px 1px var(--grey-3));
 	}
 </style>

@@ -1,7 +1,9 @@
 .Wrapper {
 	padding: 30px;
-	background: rgba(214, 212, 212, 0.31);
-	color: var(--grey-8);
+	//background: rgba(214, 212, 212, 0.31);
+	//color: var(--grey-8);
+	background: var(--grey-9);
+	color: var(--blue-2);
 	max-width: 550px;
 	border-radius: 15px;
 	font-size: 20px;
@@ -12,10 +14,14 @@
 	.divider {
 		display: flex;
 	}
+	.left-side,
+	.right-side {
+		width: 100%;
+	}
 
 	.label {
 		padding-top: 8px;
-		color: var(--grey-4);
+		color: var(--grey-3);
 		font-size: 18px;
 	}
 	.links {
@@ -27,6 +33,10 @@
 		height: 200px;
 		border-radius: 15px;
 		margin: 5px;
+		//box-shadow: 0 1px 1px 1px var(--grey-3);
+		filter: drop-shadow(0 1px 1px var(--grey-3));
+	}
+	.logo {
 	}
 	.clickable {
 		color: var(--red-3);

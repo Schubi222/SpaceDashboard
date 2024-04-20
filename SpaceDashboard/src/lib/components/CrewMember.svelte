@@ -25,6 +25,7 @@
 		width: 250px;
 		height: 300px;
 		border-radius: 10px;
+		filter: drop-shadow(0 1px 1px var(--grey-3));
 	}
 	.agency {
 		display: flex;
