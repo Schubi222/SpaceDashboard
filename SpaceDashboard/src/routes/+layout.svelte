@@ -18,6 +18,8 @@
 
 <style lang="scss">
 	.content {
+		box-sizing: border-box;
+		width: 100%;
 		height: 100vh;
 	}
 </style>

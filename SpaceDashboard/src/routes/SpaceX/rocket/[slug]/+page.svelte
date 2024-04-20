@@ -6,7 +6,9 @@
 </script>
 
 {#if data?.rocket && data?.company}
-	<Rocket bind:rocket={data.rocket} bind:company={data.company} />
+	<div class="Single-Wrapper">
+		<Rocket bind:rocket={data.rocket} bind:company={data.company} />
+	</div>
 {:else}
 	<Loading />
 {/if}

@@ -6,7 +6,9 @@
 </script>
 
 {#if data?.payload}
-	<Payload bind:payload={data.payload} bind:launch={data.launch} />
+	<div class="Single-Wrapper">
+		<Payload bind:payload={data.payload} bind:launch={data.launch} />
+	</div>
 {:else}
 	<Loading />
 {/if}

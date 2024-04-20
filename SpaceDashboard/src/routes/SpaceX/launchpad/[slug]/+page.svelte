@@ -5,8 +5,10 @@
 	export let data;
 </script>
 
-{#if data?.launchpad}
-	<Launchpad bind:launchpad={data.launchpad} bind:rockets={data.rockets} />
+{#if data?.launchpad && data?.rockets}
+	<div class="Single-Wrapper">
+		<Launchpad bind:launchpad={data.launchpad} bind:rockets={data.rockets} />
+	</div>
 {:else}
 	<Loading />
 {/if}

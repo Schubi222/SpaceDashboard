@@ -4,9 +4,10 @@
 	//color: var(--grey-8);
 	background: var(--grey-9);
 	color: var(--blue-2);
-	max-width: 550px;
+	max-width: 580px;
 	border-radius: 15px;
 	font-size: 20px;
+	box-sizing: border-box;
 	.heading {
 		padding-bottom: 10px;
 		font-size: 24px;
@@ -62,4 +63,11 @@
 }
 .noSelect:focus {
 	outline: none !important;
+}
+
+.Single-Wrapper {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

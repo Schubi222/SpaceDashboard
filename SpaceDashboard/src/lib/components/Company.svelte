@@ -49,7 +49,7 @@
 <style lang="scss">
 	.Wrapper {
 		width: 100%;
-		min-width: unset;
+		min-width: 0;
 		max-width: 1280px;
 		margin-inline: auto;
 		display: grid;

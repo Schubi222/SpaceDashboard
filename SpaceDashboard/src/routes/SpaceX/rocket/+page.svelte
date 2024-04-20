@@ -19,5 +19,6 @@
 		max-width: 1280px;
 		gap: 50px;
 		margin: auto;
+		padding: 20px;
 	}
 </style>

@@ -8,7 +8,6 @@
 	export let company: CompanyResponse;
 	export let back_btn = true;
 	let showing_info: null | string = null;
-	$: console.log(rocket?.active);
 </script>
 
 <div class="Wrapper">

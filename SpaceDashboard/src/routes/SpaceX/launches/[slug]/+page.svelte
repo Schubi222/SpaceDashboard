@@ -5,14 +5,16 @@
 </script>
 
 {#if data && data?.launch && data?.rocket && data?.launchpad && data?.payload}
-	<Launch
-		bind:launch={data.launch}
-		bind:rocket={data.rocket}
-		bind:launchpad={data.launchpad}
-		bind:payload={data.payload}
-		bind:crew={data.crew}
-		heading={data.launch.name}
-	/>
+	<div class="Single-Wrapper">
+		<Launch
+			bind:launch={data.launch}
+			bind:rocket={data.rocket}
+			bind:launchpad={data.launchpad}
+			bind:payload={data.payload}
+			bind:crew={data.crew}
+			heading={data.launch.name}
+		/>
+	</div>
 {:else}
 	no next launch found
 {/if}
