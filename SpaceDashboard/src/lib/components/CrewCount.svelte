@@ -7,7 +7,7 @@
 
 <div class="Crew-Wrapper">
 	{#each crew as member}
-		<img src={crew_img} alt="crew" />
+		<img src={crew_img} alt="crew" class="noSelect" />
 	{/each}
 </div>
 

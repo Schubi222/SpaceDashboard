@@ -17,9 +17,9 @@
 	<div class="heading">{rocket.name}</div>
 	<div class="description_and_img">
 		<span>{rocket.description}</span>
-		<img class="logo" src={rocket.flickr_images?.at(0)} alt="Rocket" />
+		<img class="logo noSelect" src={rocket.flickr_images?.at(0)} alt="Rocket" />
 	</div>
-
+	<div class="line" />
 	<div class="divider">
 		<div class="left-side">
 			<div class="label">Company</div>
@@ -60,10 +60,18 @@
 			{/if}
 		</div>
 	</div>
-	<div class="additional">
-		<button on:click={() => (showing_info = 'engine')}>Engine</button>
-		<button on:click={() => (showing_info = 'stage')}>Stage</button>
-		<button on:click={() => (showing_info = null)}>Close</button>
+	<div class="additional noSelect">
+		<button
+			on:click={() => (showing_info = 'engine')}
+			class:active={showing_info === 'engine'}
+			class="noSelect">Engine</button
+		>
+		<button
+			on:click={() => (showing_info = 'stage')}
+			class:active={showing_info === 'stage'}
+			class="noSelect">Stage</button
+		>
+		<button on:click={() => (showing_info = null)} class="noSelect">Close</button>
 	</div>
 
 	<div class="additional_info">
@@ -79,6 +87,12 @@
 </div>
 
 <style lang="scss">
+	.line {
+		border-bottom: 1px solid var(--grey-7);
+		//box-shadow: 0 0px 1px 1px var(--grey-7);
+		margin: 5px 0;
+		width: 100%;
+	}
 	.inactive {
 		color: var(--red-4);
 	}
@@ -88,6 +102,7 @@
 	.Stage-Wrapper {
 		display: flex;
 		gap: 20px;
+		padding-top: 20px;
 	}
 	.description_and_img {
 		display: flex;
@@ -105,10 +120,19 @@
 			background: var(--grey-4);
 			color: var(--blue-1);
 			transition: 0.4s;
+			filter: drop-shadow(0 1px 1px var(--grey-1));
 			&:hover {
 				background: var(--grey-6);
 				color: var(--blue-3);
 			}
+			&.active {
+				background: var(--grey-1);
+				color: var(--blue-3);
+			}
 		}
+	}
+	.additional_info {
+		border-top: 1px solid var(--grey-7);
+		margin-top: 15px;
 	}
 </style>

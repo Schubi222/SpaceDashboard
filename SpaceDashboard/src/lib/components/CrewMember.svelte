@@ -7,7 +7,7 @@
 </script>
 
 <div class="Crew_Wrapper">
-	<img src={member.image} alt="Member" />
+	<img src={member.image} alt="Member" class="noSelect" />
 	<div class="label">Name</div>
 	<div class="info">{member.name}</div>
 	<div class="label">Role</div>

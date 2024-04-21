@@ -7,11 +7,11 @@
 
 {#if link}
 	<a href={link} class="link" target="_blank">
-		<img src={active_icon} alt={title} class="link__img" />
+		<img src={active_icon} alt={title} class="link__img noSelect" />
 	</a>
 {:else}
 	<div class="no_link">
-		<img src={inactive_icon} alt={title} class="link__img" />
+		<img src={inactive_icon} alt={title} class="link__img noSelect" />
 	</div>
 {/if}
 

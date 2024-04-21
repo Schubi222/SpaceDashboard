@@ -73,10 +73,10 @@
 		<div class="left-side">
 			{#if launch?.links?.patch?.small}
 				<div class="label">Mission Patch</div>
-				<img class="logo" src={launch?.links?.patch?.small} alt="Mission" />
+				<img class="logo noSelect" src={launch?.links?.patch?.small} alt="Mission" />
 			{:else}
 				<div class="label">Rocket Logo</div>
-				<img class="logo" src={rocket.flickr_images} alt="Mission" />
+				<img class="logo noSelect" src={rocket.flickr_images} alt="Mission" />
 			{/if}
 			<div class="label">{payload?.dragon?.capsule ? 'Crew' : 'Payload'}</div>
 			{#if payload?.dragon?.capsule && crew}

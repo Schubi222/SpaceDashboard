@@ -5,7 +5,7 @@
 </script>
 
 <div class="Wrapper">
-	<img src={spaceX_logo} alt="Space X" class="icon" />
+	<img src={spaceX_logo} alt="Space X" class="icon noSelect" />
 
 	<div class="info desc">{spaceX.summary}</div>
 	<div class="board pair">

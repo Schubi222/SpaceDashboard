@@ -49,3 +49,9 @@
 		<div class="right-side"></div>
 	</div>
 </div>
+
+<style lang="scss">
+	.Wrapper {
+		width: 100%;
+	}
+</style>
