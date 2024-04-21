@@ -31,9 +31,7 @@
 			<div class="info">{payload.nationalities}</div>
 			<div class="label">Launch</div>
 			{#if launch}
-				<a class="info clickable" href={'/SpaceX/launches/' + launch.id}
-					>{launch.name}<span>&rarr;</span></a
-				>
+				<a class="info clickable" href={'/SpaceX/launches/' + launch.id}>{launch.name}</a>
 			{:else}
 				<div class="info">There is no launch for this payload</div>
 			{/if}

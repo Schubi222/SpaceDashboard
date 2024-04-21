@@ -18,6 +18,7 @@
 	import SocialMediaIcon from '$lib/components/SocialMediaIcon.svelte';
 	import moment from 'moment';
 	import CrewCount from '$lib/components/CrewCount.svelte';
+	import BackBtn from '$lib/components/BackBtn.svelte';
 
 	export let launch: LaunchResponse;
 	export let rocket: RocketsResponse;
@@ -25,9 +26,13 @@
 	export let payload: PayloadsResponse;
 	export let crew: CrewResponse[] | undefined;
 	export let heading: string;
+	export let back_btn = true;
 </script>
 
 <div class="Wrapper">
+	{#if back_btn}
+		<BackBtn />
+	{/if}
 	<div class="heading">{heading}</div>
 	<div class="divider">
 		<div class="right-side">
@@ -35,7 +40,7 @@
 			<div class="mission info">{launch.name}</div>
 			<div class="label">Rocket</div>
 			<a class="rocket info clickable" href={'/SpaceX/rocket/' + rocket.id}>
-				{rocket.name}<span>&rarr;</span>
+				{rocket.name}
 			</a>
 			<div class="label">Date</div>
 			<div class="date info">
@@ -43,7 +48,7 @@
 			</div>
 			<div class="label">Launchpad</div>
 			<a class="launchpad info clickable" href={'/SpaceX/launchpad/' + launchpad.id}>
-				{launchpad?.name}<span>&rarr;</span>
+				{launchpad?.name}
 			</a>
 			<div class="label">Details</div>
 			<div class="details info">
@@ -81,12 +86,10 @@
 			<div class="label">{payload?.dragon?.capsule ? 'Crew' : 'Payload'}</div>
 			{#if payload?.dragon?.capsule && crew}
 				<CrewCount bind:crew />
-				<a class="payload info clickable" href={'/SpaceX/crew/' + launch.id}>
-					Crew details <span>&rarr;</span>
-				</a>
+				<a class="payload info clickable" href={'/SpaceX/crew/' + launch.id}> Crew details </a>
 			{:else}
 				<a class="payload info clickable" href={'/SpaceX/payload/' + payload.id}>
-					{payload.name} <span>&rarr;</span>
+					{payload.name}
 				</a>
 			{/if}
 		</div>

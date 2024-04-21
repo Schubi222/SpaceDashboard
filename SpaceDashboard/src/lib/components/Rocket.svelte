@@ -25,7 +25,7 @@
 			<div class="label">Company</div>
 			{#if company?.name === 'SpaceX'}
 				<a class="rocket info clickable" href={'/SpaceX/company'}>
-					{company.name}<span>&rarr;</span>
+					{company.name}
 				</a>
 			{:else}
 				<div class="info">{company.name}</div>
@@ -128,10 +128,11 @@
 			&.active {
 				background: var(--grey-1);
 				color: var(--blue-3);
+				filter: none;
 			}
 		}
 	}
-	.additional_info {
+	.additional_info:has(*) {
 		border-top: 1px solid var(--grey-7);
 		margin-top: 15px;
 	}

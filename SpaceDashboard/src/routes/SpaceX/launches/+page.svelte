@@ -14,6 +14,7 @@
 		bind:payload={next.payload}
 		bind:crew={next.crew}
 		heading="Next Launch"
+		back_btn={false}
 	/>
 {:else}
 	no next launch found
@@ -25,7 +26,8 @@
 		bind:launchpad={prev.launchpad}
 		bind:payload={prev.payload}
 		bind:crew={prev.crew}
-		heading="prev Launch"
+		heading="Previous Launch"
+		back_btn={false}
 	/>
 {:else}
 	no prev launch found
