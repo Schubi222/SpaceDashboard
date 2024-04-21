@@ -6,9 +6,7 @@
 </script>
 
 {#if data?.spaceX}
-	<div class="Single-Wrapper">
-		<Company bind:spaceX={data.spaceX} />
-	</div>
+	<Company bind:spaceX={data.spaceX} />
 {:else}
 	<Loading />
 {/if}

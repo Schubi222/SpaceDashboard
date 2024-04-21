@@ -1,10 +1,15 @@
 <script lang="ts">
 	import type { CompanyResponse } from '$lib/types/spacex/apiResponse';
 	import { spaceX_logo } from '$lib/assets';
+	import BackBtn from '$lib/components/BackBtn.svelte';
 	export let spaceX: CompanyResponse;
+	export let back_btn = true;
 </script>
 
 <div class="Wrapper">
+	{#if back_btn}
+		<BackBtn />
+	{/if}
 	<img src={spaceX_logo} alt="Space X" class="icon noSelect" />
 
 	<div class="info desc">{spaceX.summary}</div>

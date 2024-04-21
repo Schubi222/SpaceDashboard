@@ -14,7 +14,7 @@
 	<div class="Home-Page-Wrapper">
 		<div>
 			{#if spaceX}
-				<Company bind:spaceX />
+				<Company bind:spaceX back_btn={false} />
 			{:else}
 				Something went wrong while loading the company data.
 			{/if}
