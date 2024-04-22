@@ -1,34 +1,59 @@
 <script lang="ts">
-	import Launch from '$lib/components/Launch.svelte';
+	import Loading from '$lib/components/Loading.svelte';
+	import LaunchOverview from '$lib/components/LaunchOverview.svelte';
+	import { LightPaginationNav } from 'svelte-paginate';
+	import { getPaginatedLaunches } from '$lib/helpers/apis/SpaceX/launches';
+	import type { ExtendedLaunchResponse } from '$lib/types/spacex/apiResponse';
 
 	export let data;
-	let next = data.next;
-	let prev = data.prev;
+	let launches = data?.launches;
+	let docs_count = data.docs_count;
+	let current_page = 1;
+	let loading: boolean;
+	async function loadMorePages(e) {
+		loading = true;
+		const data = await getPaginatedLaunches(10, current_page);
+		current_page = e.detail.page;
+		launches = data.docs as ExtendedLaunchResponse[];
+		loading = false;
+	}
 </script>
 
-{#if next && next.nextLaunch && next.launchpad && next.rocket && next.payload}
-	<Launch
-		bind:launch={next.nextLaunch}
-		bind:rocket={next.rocket}
-		bind:launchpad={next.launchpad}
-		bind:payload={next.payload}
-		bind:crew={next.crew}
-		heading="Next Launch"
-		back_btn={false}
-	/>
-{:else}
-	no next launch found
-{/if}
-{#if prev && prev.prevLaunch && prev.launchpad && prev.rocket && prev.payload}
-	<Launch
-		bind:launch={prev.prevLaunch}
-		bind:rocket={prev.rocket}
-		bind:launchpad={prev.launchpad}
-		bind:payload={prev.payload}
-		bind:crew={prev.crew}
-		heading="Previous Launch"
-		back_btn={false}
-	/>
-{:else}
-	no prev launch found
-{/if}
+<div class="All-Launches">
+	{#if data?.launches && !loading}
+		<div class="heading">All Launches</div>
+		{#each launches as launch}
+			<LaunchOverview bind:launch />
+		{/each}
+		<LightPaginationNav
+			totalItems={docs_count}
+			pageSize={10}
+			bind:currentPage={current_page}
+			limit={1}
+			on:setPage={(e) => loadMorePages(e)}
+		/>
+	{:else}
+		<Loading />
+	{/if}
+</div>
+
+<style lang="scss">
+	:global(.pagination-nav) {
+		width: 280px;
+		padding: 5px 220px;
+		box-sizing: border-box;
+	}
+	.All-Launches {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: white;
+		margin: 10px auto;
+		max-width: 700px;
+		border-radius: 15px;
+		box-sizing: border-box;
+		gap: 30px;
+		padding: 30px;
+	}
+</style>

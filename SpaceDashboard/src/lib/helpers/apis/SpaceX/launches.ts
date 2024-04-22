@@ -1,5 +1,5 @@
 import { BASE_SPACEX, endpoints } from '$lib/helpers/apis/SpaceX/constants';
-import type { LaunchResponse } from '$lib/types/spacex/apiResponse';
+import type { ExtendedLaunchResponse, LaunchResponse } from '$lib/types/spacex/apiResponse';
 import { getAllOfEntity, getEntityById } from '$lib/helpers/apis/SpaceX/BaseQueries';
 
 export async function getLaunchesById(id: string) {
@@ -45,4 +45,48 @@ export async function getPastLaunches() {
 		//TODO: ERROR HANDLING
 		console.error(e);
 	}
+}
+
+export async function getPaginatedLaunches(limit: number, site: number | undefined) {
+	const url = BASE_SPACEX + endpoints.launches + '/query';
+	const body = {
+		query: {},
+		options: {
+			sort: {
+				date_unix: 'desc'
+			},
+			limit: limit,
+			page: site ?? 0,
+			populate: [
+				{
+					path: 'payloads',
+					select: {
+						type: 1
+					}
+				},
+				{
+					path: 'rocket',
+					select: {
+						name: 1
+					}
+				},
+				{
+					path: 'launchpad',
+					select: {
+						name: 1
+					}
+				}
+			]
+		}
+	};
+	const response = await fetch(url, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		mode: 'cors',
+		body: JSON.stringify(body)
+	});
+
+	return await response.json();
 }

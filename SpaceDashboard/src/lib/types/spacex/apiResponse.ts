@@ -50,7 +50,11 @@ export type LaunchResponse = {
 	auto_update: boolean;
 	id: string;
 };
-
+export type ExtendedLaunchResponse = LaunchResponse & {
+	rocket: { name: string };
+	launchpad: { name: string };
+	payloads: { type: string };
+};
 export type RocketsResponse = {
 	name: string;
 	type: string;

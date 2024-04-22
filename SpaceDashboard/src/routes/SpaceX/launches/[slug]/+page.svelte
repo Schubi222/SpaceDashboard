@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Launch from '$lib/components/Launch.svelte';
+	import NothingFound from '$lib/components/NothingFound.svelte';
 
 	export let data;
 </script>
@@ -16,5 +17,5 @@
 		/>
 	</div>
 {:else}
-	no next launch found
+	<NothingFound />
 {/if}
