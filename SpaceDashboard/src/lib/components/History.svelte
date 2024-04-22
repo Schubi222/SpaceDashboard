@@ -13,8 +13,8 @@
 
 <style lang="scss">
 	.history {
-		width: 100px;
-		height: 500px;
+		width: 80px;
+		height: 400px;
 		transition: 0.4s;
 		box-shadow: 0 1px 2px var(--blue-5);
 		display: flex;
@@ -28,28 +28,28 @@
 		overflow: auto;
 
 		.time {
-			width: 75px;
-			min-height: 75px;
+			width: 60px;
+			min-height: 60px;
 			border-radius: 1000px;
 			background: white;
 			box-shadow: 0 1px 2px 1px var(--blue-5);
 			font-weight: bold;
-			font-size: 2rem;
+			font-size: 1.5rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			margin-top: 10px;
 		}
 		.description {
-			opacity: 0;
+			display: none;
 		}
 		.long {
 			display: none;
 		}
 		&:hover {
-			width: 300px;
+			width: 200px;
 			.description {
-				opacity: 1;
+				display: unset;
 			}
 			.long {
 				display: unset;
