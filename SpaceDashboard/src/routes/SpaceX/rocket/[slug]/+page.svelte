@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Loading from '$lib/components/Loading.svelte';
 	import Rocket from '$lib/components/Rocket.svelte';
 	import NothingFound from '$lib/components/NothingFound.svelte';
 

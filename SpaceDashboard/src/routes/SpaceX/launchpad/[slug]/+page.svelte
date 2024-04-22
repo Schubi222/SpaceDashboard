@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Loading from '$lib/components/Loading.svelte';
 	import Launchpad from '$lib/components/Launchpad.svelte';
 	import NothingFound from '$lib/components/NothingFound.svelte';
 

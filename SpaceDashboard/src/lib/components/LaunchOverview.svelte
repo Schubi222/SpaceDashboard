@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { ExtendedLaunchResponse } from '$lib/types/spacex/apiResponse';
 	import moment from 'moment/moment';
-	import { goto } from '$app/navigation';
 
 	export let launch: ExtendedLaunchResponse;
 </script>

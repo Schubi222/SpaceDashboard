@@ -1,5 +1,5 @@
 import { BASE_SPACEX, endpoints } from '$lib/helpers/apis/SpaceX/constants';
-import type { ExtendedLaunchResponse, LaunchResponse } from '$lib/types/spacex/apiResponse';
+import type { LaunchResponse } from '$lib/types/spacex/apiResponse';
 import { getAllOfEntity, getEntityById } from '$lib/helpers/apis/SpaceX/BaseQueries';
 
 export async function getLaunchesById(id: string) {
