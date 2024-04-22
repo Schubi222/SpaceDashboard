@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Loading from '$lib/components/Loading.svelte';
 	import Payload from '$lib/components/Payload.svelte';
+	import NothingFound from '$lib/components/NothingFound.svelte';
 
 	export let data;
 </script>
@@ -10,5 +11,5 @@
 		<Payload bind:payload={data.payload} bind:launch={data.launch} />
 	</div>
 {:else}
-	<Loading />
+	<NothingFound />
 {/if}
