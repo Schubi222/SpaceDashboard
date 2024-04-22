@@ -7,17 +7,22 @@
 	export let launch: LaunchResponse;
 </script>
 
-<div class="Wrapper">
-	<BackBtn />
-	<div class="heading">Members of {launch?.name}</div>
-	<div class="row">
-		{#each crew as member, index}
-			<CrewMember bind:member bind:role={launch.crew[index].role} />
-		{/each}
+<div class="spacing">
+	<div class="Wrapper">
+		<BackBtn />
+		<div class="heading">Members of {launch?.name}</div>
+		<div class="row">
+			{#each crew as member, index}
+				<CrewMember bind:member bind:role={launch.crew[index].role} />
+			{/each}
+		</div>
 	</div>
 </div>
 
 <style lang="scss">
+	.spacing {
+		padding: 10px;
+	}
 	.Wrapper {
 		width: fit-content;
 		max-width: unset;

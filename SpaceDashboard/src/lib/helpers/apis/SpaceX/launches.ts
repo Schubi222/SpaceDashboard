@@ -56,7 +56,7 @@ export async function getPaginatedLaunches(limit: number, site: number | undefin
 				date_unix: 'desc'
 			},
 			limit: limit,
-			page: site ?? 0,
+			page: site ? site - 1 : 0,
 			populate: [
 				{
 					path: 'payloads',

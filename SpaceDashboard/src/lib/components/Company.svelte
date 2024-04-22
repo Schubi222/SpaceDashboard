@@ -45,9 +45,9 @@
 	</div>
 	<!--	TODO: STYLING-->
 	<div class="links">
-		<a href={spaceX.links.flickr}>Official SpaceX Photos</a>
-		<a href={spaceX.links.twitter}>Official SpaceX Twitter</a>
-		<a href={spaceX.links.website}>Official SpaceX Website</a>
+		<a href={spaceX.links.flickr} target="_blank">Official SpaceX Photos</a>
+		<a href={spaceX.links.twitter} target="_blank">Official SpaceX Twitter</a>
+		<a href={spaceX.links.website} target="_blank">Official SpaceX Website</a>
 	</div>
 </div>
 

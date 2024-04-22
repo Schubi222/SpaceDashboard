@@ -34,8 +34,10 @@
 		box-sizing: border-box;
 		border-bottom-right-radius: 15px;
 		border-top-right-radius: 15px;
+		z-index: 100;
 		&:hover {
 			left: 0;
+			box-shadow: 1px 0 3px 1px var(--grey-3);
 		}
 		&:hover > .arrow {
 			opacity: 0;

@@ -12,7 +12,8 @@
 	let loading: boolean;
 	async function loadMorePages(e) {
 		loading = true;
-		const data = await getPaginatedLaunches(10, current_page);
+		console.log(e.detail.page);
+		const data = await getPaginatedLaunches(10, e.detail.page);
 		current_page = e.detail.page;
 		launches = data.docs as ExtendedLaunchResponse[];
 		loading = false;
@@ -26,10 +27,10 @@
 			<LaunchOverview bind:launch />
 		{/each}
 		<LightPaginationNav
-			totalItems={docs_count}
+			totalItems={docs_count + 9}
 			pageSize={10}
 			bind:currentPage={current_page}
-			limit={1}
+			limit={2}
 			on:setPage={(e) => loadMorePages(e)}
 		/>
 	{:else}

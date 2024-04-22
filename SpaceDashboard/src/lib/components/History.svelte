@@ -25,7 +25,8 @@
 		box-sizing: border-box;
 		padding: 0 10px 10px 10px;
 		color: var(--blue-2);
-		overflow: auto;
+		overflow-y: auto;
+		overflow-x: hidden;
 
 		.time {
 			width: 60px;
