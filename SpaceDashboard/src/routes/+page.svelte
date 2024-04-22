@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	onMount(() => goto('/SpaceX'));
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>SpaceX Dashboard</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
-
-<h1>Welcome to Space-Dashboard</h1>
-<p>Visit <a href="/SpaceX">The SpaceX Dashboard</a></p>
