@@ -15,11 +15,18 @@
 	<div class="info desc">{spaceX.summary}</div>
 	<div class="board pair">
 		<div class="label">Board</div>
-		<div class="info">CEO: {spaceX.ceo} | CTO: {spaceX.cto} | COO: {spaceX.coo}</div>
+		<div class="info column">
+			<span class="pipe">CEO: {spaceX.ceo}</span>
+			<span class="pipe">CTO: {spaceX.cto}</span>
+			<span class="pipe">COO: {spaceX.coo}</span>
+		</div>
 	</div>
 	<div class="year pair">
 		<div class="label">Founded</div>
-		<div class="info">Founded by {spaceX.founder} in {spaceX.founded}</div>
+		<div class="info column">
+			<span class="center"> Founded by {spaceX.founder}</span>
+			<span class="center"> in {spaceX.founded}</span>
+		</div>
 	</div>
 	<div class="facts">
 		<div class="pair">
@@ -36,10 +43,10 @@
 		</div>
 		<div class="pair">
 			<div class="label">Headquarter</div>
-			<div class="info">
-				{spaceX.headquarters.address},
-				{spaceX.headquarters.city}
-				{spaceX.headquarters.state}
+			<div class="info column center">
+				<span>{spaceX.headquarters.address},</span>
+				<span>{spaceX.headquarters.city}</span>
+				<span>{spaceX.headquarters.state}</span>
 			</div>
 		</div>
 	</div>
@@ -66,6 +73,12 @@
 			'Links Links Links Links';
 		grid-row-gap: 30px;
 		border-radius: 0 0 15px 15px;
+	}
+	.info > .pipe:after {
+		content: ' | ';
+	}
+	.info > .pipe:last-of-type:after {
+		content: '';
 	}
 	.icon {
 		width: 500px;
@@ -107,5 +120,34 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	@media (max-width: 1100px) {
+		.Wrapper {
+			grid-template-areas:
+				'img img'
+				'desc desc'
+				'Board Year'
+				'Facts Facts'
+				'Links Links';
+		}
+		.facts {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 10px;
+		}
+		.column {
+			display: flex;
+			flex-direction: column;
+		}
+		.info > .pipe:after {
+			content: '';
+		}
+		.center {
+			text-align: center;
+		}
+		.icon {
+			width: 300px;
+		}
 	}
 </style>

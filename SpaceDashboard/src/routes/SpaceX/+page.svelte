@@ -10,7 +10,7 @@
 	let spaceX = data.spaceX;
 </script>
 
-{#if data}
+{#if data && (data?.next || data?.prev || data?.spaceX)}
 	<div class="Home-Page-Wrapper">
 		<div>
 			{#if spaceX}
